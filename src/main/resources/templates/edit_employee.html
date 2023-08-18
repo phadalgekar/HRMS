@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employee</title>
+</head>
+<body>
+    <h1>Edit Employee</h1>
+    <form th:action="@{/saveEditedEmployee}" method="post" th:object="${employee}" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{eid}" />
+        <label>First Name: <input type="text" th:field="*{fname}" /></label><br>
+        <label>Last Name: <input type="text" th:field="*{lname}" /></label><br>
+        <label>Date of Birth: <input type="date" th:field="*{dob}" /></label><br>
+        <label>Email: <input type="email" th:field="*{email}" /></label><br>
+        <label>Phone: <input type="tel" th:field="*{phone}" /></label><br>
+        <label>Address: <input type="text" th:field="*{address}" /></label><br>
+        <label>Role: <input type="text" th:field="*{role}" /></label><br>
+        <label>Department: <input type="text" th:field="*{dept}" /></label><br>
+        <label>Nationality: <input type="text" th:field="*{nationality}" /></label><br>
+        <label>Aadhar Number: <input type="text" th:field="*{aadharNumber}" /></label><br>
+        <label>PAN Number: <input type="text" th:field="*{panNumber}" /></label><br>
+        <label>Gender: <input type="text" th:field="*{gender}" /></label><br>
+        <label>Marital Status: <input type="text" th:field="*{maritalStatus}" /></label><br>
+        <label>Blood Group: <input type="text" th:field="*{bloodGroup}" /></label><br>
+        <label>Start Date: <input type="date" th:field="*{startDate}" /></label><br>
+        <label>End Date: <input type="date" th:field="*{endDate}" /></label><br>
+        <label>Basic Salary: <input type="number" th:field="*{basicSalary}" /></label><br>
+        <label>Type: <input type="text" th:field="*{type}" /></label><br>
+        
+       	<img th:if="${employee.img1Base64}" th:src="'data:image/jpeg;base64,' + ${employee.img1Base64}" alt="Employee Image" />
+
+        <input type="file" id="img1File" name="img1File" accept=".png,.jpg,.jpeg">
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

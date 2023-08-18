@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Client</title>
+</head>
+<body>
+    <h1>Add Client</h1>
+    
+    <form th:action="@{/saveClient}" th:object="${client}"method="post">
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" th:field="*{companyName}" required><br>
+        
+        <label for="personName">HR Name:</label>
+        <input type="text" id="personName" th:field="*{personName}" required><br>
+        
+        <label for="personPhone">HR Phone:</label>
+        <input type="text" id="personPhone" th:field="*{personPhone}" required><br>
+        
+        <label for="titlePosition">Title/Position:</label>
+        <input type="text" id="titlePosition" th:field="*{titlePosition}" required><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" th:field="*{address}" required><br>
+        
+        <label for="emailId">Email ID:</label>
+        <input type="email" id="emailId" th:field="*{emailId}" required><br>
+        
+        <button type="submit">Add Client</button>
+    </form>
+</body>
+</html>

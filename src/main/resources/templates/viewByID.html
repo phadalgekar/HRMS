@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Employee Details</title>
+</head>
+<body>
+    <h1>Employee Details</h1>
+        <a th:href="@{/editEmployee/{eid}}">
+        <button>Click here to edit</button>
+    </a>
+    <p>ID: <span th:text="${employee.eid}"></span></p>
+    <p>First Name: <span th:text="${employee.fname}"></span></p>
+    <p>Last Name: <span th:text="${employee.lname}"></span></p>
+    <p>Date of Birth: <span th:text="${employee.dob}"></span></p>
+    <p>Email: <span th:text="${employee.email}"></span></p>
+    <p>Phone: <span th:text="${employee.phone}"></span></p>
+    <p>Address: <span th:text="${employee.address}"></span></p>
+    <p>Role: <span th:text="${employee.role}"></span></p>
+    <p>Department: <span th:text="${employee.dept}"></span></p>
+    <p>Nationality: <span th:text="${employee.nationality}"></span></p>
+    <p>Aadhar Number: <span th:text="${employee.aadharNumber}"></span></p>
+    <p>PAN Number: <span th:text="${employee.panNumber}"></span></p>
+    <p>Gender: <span th:text="${employee.gender}"></span></p>
+    <p>Marital Status: <span th:text="${employee.maritalStatus}"></span></p>
+    <p>Blood Group: <span th:text="${employee.bloodGroup}"></span></p>
+    <p>Start Date: <span th:text="${employee.startDate}"></span></p>
+    <p>End Date: <span th:text="${employee.endDate}"></span></p>
+    <p>Basic Salary: <span th:text="${employee.basicSalary}"></span></p>
+    <p>Type: <span th:text="${employee.Type}"></span></p>
+    <p>Created Date: <span th:text="${employee.createdDate}"></span></p>
+    
+     <p class="image-container">
+                <img th:if="${employee.img1}" th:src="'data:image/png;base64,' + ${employee.img1Base64}" alt="Employee Image" />
+            </p>
+
+    <!-- Link back to the employee list view -->
+    <a th:href="@{/viewemp}">Back to Employee List</a>
+</body>
+</html>

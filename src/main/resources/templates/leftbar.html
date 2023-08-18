@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Left Menu Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+        }
+
+        .left-menu {
+            background-color: #002D62;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 20px 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+
+        li:hover {
+            transform: scale(1.1);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            color: #00FFFF;
+        }
+
+        a:hover i {
+            color: #00FFFF;
+        }
+
+        .logout-btn {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .logout-btn a {
+            color: red;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .logout-btn i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .container {
+            /* Set the left margin to match the width of the left menu */
+            margin-left: 200px;
+            padding: 20px;
+            /* Set the width to fill the remaining space on the right */
+            width: calc(100% - 200px);
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bottom-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+    </style>
+   
+</head>
+<body>
+<div class="left-menu">
+    <h1 th:style="'color: #00FFFF; text-align: center;'">HRMS</h1>
+    <ul>
+        <li><i class="fas fa-user" style="color: #ffffff;"></i><a th:href="@{/viewemp}">Employee</a></li>
+        <li><i class="fas fa-university" style="color: #ffffff;"></i><a th:href="@{/candidate}">Candidate</a></li>
+        <li><i class="fas fa-birthday-cake" style="color: #ffffff;"></i><a th:href="@{/birthdays}">Birthdays</a></li>
+        <li><i class="fas fa-umbrella-beach" style="color: #ffffff;"></i><a th:href="@{/holidays}">Holidays</a></li>
+        <li><i class="fas fa-fingerprint" style="color: #ffffff;"></i><a th:href="@{/attendance}">Attendance</a></li>
+    </ul>
+    <div class="bottom-btn">
+        <ul>
+            <li class="logout-btn"><i class="fas fa-sign-out-alt" style="color: red;"></i><a th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>

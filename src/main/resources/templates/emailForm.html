@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Email to Employees</title>
+</head>
+<body>
+    <h2>Send Email to Employees</h2>
+    <form th:action="@{/send-email}" method="post" enctype="multipart/form-data">
+        <label for="emailSelect">Select recipient(s):</label>
+        <select id="emailSelect" name="selectedEmails" multiple="multiple">
+            <option th:each="email : ${distinctEmails}" th:value="${email}" th:text="${email}"></option>
+        </select>
+        <br>
+        <label for="emailSubject">Email Subject:</label>
+        <input type="text" id="emailSubject" name="emailSubject" placeholder="Enter email subject">
+        <br>
+        <label for="emailBody">Email Body:</label>
+        <textarea id="emailBody" name="emailBody" rows="4" cols="50" placeholder="Enter email body"></textarea>
+        <br>
+        <!-- File input for image -->
+        <label for="img1File">Upload Image:</label>
+        <input type="file" id="img1File" name="img1File">
+        <br>
+        <!-- File input for document -->
+        <label for="docFile">Upload Document:</label>
+        <input type="file" id="docFile" name="docFile">
+        <br>
+        <button type="submit">Send Email</button>
+    </form>
+</body>
+</html>

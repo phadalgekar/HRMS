@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Details</title>
+</head>
+<body>
+    <h1>Client Details</h1>
+
+    <div>
+        <p><strong>Client ID:</strong> <span th:text="${client.clid}"></span></p>
+        <p><strong>Company Name:</strong> <span th:text="${client.companyName}"></span></p>
+        <p><strong>HR Name:</strong> <span th:text="${client.personName}"></span></p>
+        <p><strong>HR Phone:</strong> <span th:text="${client.personPhone}"></span></p>
+        <p><strong>Title/Position:</strong> <span th:text="${client.titlePosition}"></span></p>
+        <p><strong>Address:</strong> <span th:text="${client.address}"></span></p>
+        <p><strong>Email ID:</strong> <span th:text="${client.emailId}"></span></p>
+    </div>
+
+</body>
+</html>
